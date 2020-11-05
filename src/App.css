@@ -1,0 +1,28 @@
+.App {
+    height: 100vh;
+    background: #de6161;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2657eb, #de6161);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2657eb, #de6161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+.card-rounded-left {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-radius: 1em 0 0 1em !important;
+}
+
+.card-rounded-right {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-radius: 0 1em 1em 0 !important;
+}
