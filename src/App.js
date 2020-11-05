@@ -11,6 +11,14 @@ import Image from 'react-bootstrap/Image'
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+
+// Importing Font Awesome
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+
+
+
 // Importing sections
 
 import Home from './pages/Home';
@@ -22,46 +30,71 @@ import Contact from './pages/Contact';
 
 import './App.css';
 
+// Importing assets
+
+import Picture from './assets/img/profile-picture.jpg';
+
 function App() {
   return (
 
     <div className="App">
 
-      <Container className="h-100">
+      <Container>
         <Router>
-          <Row className="no-gutters">
-            <Col sm={12} md={4} lg={4} xl={4}>
-              <Card bg="dark" className="rounded-0 border-0 col-height">
-                <Card.Body className="text-center">
-                  <Image src="https://via.placeholder.com/200x200" roundedCircle />
+          
+            <Row className="no-gutters row-center-align h-100">
+              <Col sm={12} md={4} lg={4} xl={4}>
+                <Card bg="dark" className="border-0 h-100 card-rounded-left">
+                  <Card.Body className="text-center">
+                    <Image src={Picture} roundedCircle width={200} />
 
-                  <h4 className="font-weight-bold mt-4">Luis Aponte</h4>
-                  <p className="text-uppercase small">Web Developer</p>
-                
-                  <Nav defaultActiveKey="/" className="flex-column">
-                    <Nav.Link href="/"> <Link to="/"> Home </Link> </Nav.Link>
-                    <Nav.Link eventKey="link-1"> <Link to="/about"> About</Link> </Nav.Link>
-                    <Nav.Link eventKey="link-2"> <Link to="/projects"> Projects </Link> </Nav.Link>
-                    <Nav.Link eventKey="link-3"> <Link to="/contact"> Contact </Link> </Nav.Link>
-                  </Nav>
-                </Card.Body>
-              </Card>
-            </Col>
+                    
 
-            <Col sm={12} md={8} lg={8} xl={8}>
-              <Card  bg="primary" className="rounded-0 border-0">
-                <Card.Body>
-                  <Switch>
-                    <Route exact path="/" component={ Home } /> 
-                    <Route path="/about" component={ About } /> 
-                    <Route path="/projects" component={ Projects } />
-                    <Route path="/contact" component={ Contact } />
-                  </Switch>
-                </Card.Body>
-              </Card>
-            </Col>
+                    <h4 className="font-weight-bold mt-4 text-white">Luis Aponte</h4>
+                    <p className="text-uppercase small text-white">Web Developer</p>
 
-          </Row>
+                    <a href="https://facebook.com/luemsoft" className="text-white mx-1">
+                      <FontAwesomeIcon icon={faFacebook} size="lg" />
+                    </a>
+
+                    <a href="https://twitter.com/luemdesign" className="text-white mx-1">
+                      <FontAwesomeIcon icon={faTwitter} size="lg" />
+                    </a>
+
+                    <a href="https://instagram.com/luemsoft" className="text-white mx-1">
+                      <FontAwesomeIcon icon={faInstagram} size="lg" />
+                    </a>
+
+                    <a href="https://github.com/luisveck" className="text-white mx-1">
+                      <FontAwesomeIcon icon={faGithub} size="lg" />
+                    </a>
+                    
+                  
+                    <Nav defaultActiveKey="/" className="flex-column">
+                      <Nav.Link href="/"> <Link to="/"> Home </Link> </Nav.Link>
+                      <Nav.Link eventKey="link-1"> <Link to="/about"> About</Link> </Nav.Link>
+                      <Nav.Link eventKey="link-2"> <Link to="/projects"> Projects </Link> </Nav.Link>
+                      <Nav.Link eventKey="link-3"> <Link to="/contact"> Contact </Link> </Nav.Link>
+                    </Nav>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              <Col sm={12} md={8} lg={8} xl={8}>
+                <Card  bg="light" className="border-0 h-100 card-rounded-right">
+                  <Card.Body>
+                    <Switch>
+                      <Route exact path="/" component={ Home } /> 
+                      <Route path="/about" component={ About } /> 
+                      <Route path="/projects" component={ Projects } />
+                      <Route path="/contact" component={ Contact } />
+                    </Switch>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+            </Row>
+          
         </Router>
       </Container>
       
