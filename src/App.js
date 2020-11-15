@@ -15,13 +15,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Importing Font Awesome
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faTwitter, faInstagram, faGithub, faBehance } from '@fortawesome/free-brands-svg-icons';
 
 
 
 // Importing sections
 
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
@@ -68,13 +68,17 @@ function App() {
                     <a href="https://github.com/luisveck" className="text-white mx-1">
                       <FontAwesomeIcon icon={faGithub} size="lg" />
                     </a>
+
+                    <a href="https://behance.com/luemdesign" className="text-white mx-1">
+                      <FontAwesomeIcon icon={faBehance} size="lg" />
+                    </a>
                     
                   
-                    <Nav defaultActiveKey="/" className="flex-column">
-                      <Nav.Link href="/"> <Link to="/"> Home </Link> </Nav.Link>
-                      <Nav.Link eventKey="link-1"> <Link to="/about"> About</Link> </Nav.Link>
-                      <Nav.Link eventKey="link-2"> <Link to="/projects"> Projects </Link> </Nav.Link>
-                      <Nav.Link eventKey="link-3"> <Link to="/contact"> Contact </Link> </Nav.Link>
+                    <Nav defaultActiveKey="/" className="flex-column py-4">
+                      {/* <Nav.Link href="/"> <Link to="/"> Home </Link> </Nav.Link> */}
+                      <Nav.Link eventKey="link-1"> <Link className="text-white link" to="/"> About </Link> </Nav.Link>
+                      <Nav.Link eventKey="link-2"> <Link className="text-white link" to="/projects"> Projects </Link> </Nav.Link>
+                      <Nav.Link eventKey="link-3"> <Link className="text-white link" to="/contact"> Contact </Link> </Nav.Link>
                     </Nav>
                   </Card.Body>
                 </Card>
@@ -84,8 +88,8 @@ function App() {
                 <Card  bg="light" className="border-0 h-100 card-rounded-right">
                   <Card.Body>
                     <Switch>
-                      <Route exact path="/" component={ Home } /> 
-                      <Route path="/about" component={ About } /> 
+                      {/* <Route path="/" component={ Home } />  */}
+                      <Route exact path="/" component={ About } /> 
                       <Route path="/projects" component={ Projects } />
                       <Route path="/contact" component={ Contact } />
                     </Switch>

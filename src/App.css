@@ -26,3 +26,7 @@
     padding-bottom: 2em;
     border-radius: 0 1em 1em 0 !important;
 }
+
+.link {
+    text-decoration: none !important;
+}
